@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from '../employee';
 
 @Component({
   selector: 'app-employee-form',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee-form.component.scss']
 })
 export class EmployeeFormComponent {
+  model = new Employee(
+    'John',
+    'Doe',
+    true,
+    'W2'
+  );
 
+  constructor() { }
+
+  ngOnInit() {
+  }
 }

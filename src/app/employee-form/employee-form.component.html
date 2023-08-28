@@ -5,23 +5,37 @@
   
         <section>
           <mat-form-field>
-            <input matInput type="text" placeholder="First Name" required>
+            <input
+              matInput
+              type="text"
+              placeholder="First Name"
+              required
+              name="firstName"
+              [(ngModel)]="model.firstName"
+            >
           </mat-form-field>
         </section>
   
         <section>
           <mat-form-field>
-            <input matInput type="text" placeholder="Last Name" required>
+            <input
+              matInput
+              type="text"
+              placeholder="Last Name"
+              required
+              name="lastName"
+              [(ngModel)]="model.lastName"
+            >
           </mat-form-field>
         </section>
   
         <section>
-          <mat-checkbox>Full-time employee</mat-checkbox>
+          <mat-checkbox required name="fulltime" [(ngModel)]="model.isFullTime">Full-time employee</mat-checkbox>
         </section>
   
         <section>
           <label>Payment Type:</label>
-          <mat-radio-group>
+          <mat-radio-group required name="payment" [(ngModel)]="model.paymentType">
             <mat-radio-button value="W2">W2</mat-radio-button>
             <mat-radio-button value="1099">1099</mat-radio-button>
           </mat-radio-group>
@@ -29,7 +43,7 @@
   
         <section>
           <mat-form-field>
-            <mat-select placeholder="Primary Language">
+            <mat-select placeholder="Primary Language" name="language" [(ngModel)]="model.primaryLanguage">
               <mat-option value="English">English</mat-option>
               <mat-option value="Spanish">Spanish</mat-option>
               <mat-option value="French">French</mat-option>
@@ -41,5 +55,12 @@
         <button mat-raised-button color="primary">Submit</button>
   
       </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Model</mat-card-title>
+    <mat-card-content>
+      <pre>{{ model | json}}</pre>
     </mat-card-content>
   </mat-card>

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Employee } from './employee';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -8,17 +7,8 @@ import { Employee } from './employee';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'day10TemplateDrivenForms';
 
-  emp =  new Employee(
-    'Henry ',
-    'Cavill',
-    true,
-    'W2'
-    );
-
-  ngOnInit(): void {
-    console.log('Employee\'s name is ' + this.emp.firstName + this.emp.lastName)
-  }
+  
 }
