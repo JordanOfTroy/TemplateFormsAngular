@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Employee } from '../employee';
+import { NgForm } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-employee-form',
@@ -7,9 +10,12 @@ import { Employee } from '../employee';
   styleUrls: ['./employee-form.component.scss']
 })
 export class EmployeeFormComponent {
+
+  @ViewChild('empForm') empForm: NgForm | any;
+
   model = new Employee(
-    'John',
-    'Doe',
+    'Henry',
+    'Cavill',
     true,
     'W2'
   );
@@ -18,4 +24,10 @@ export class EmployeeFormComponent {
 
   ngOnInit() {
   }
+
+  submitForm() {
+    console.log('form submitted:', JSON.stringify(this.model));
+    console.log('isValid:',this.empForm.valid)
+  }
+
 }
